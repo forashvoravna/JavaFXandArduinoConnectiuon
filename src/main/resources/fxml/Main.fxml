@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.MainController">
+   <children>
+      <Label fx:id="id_lbl_status" layoutX="111.0" layoutY="14.0" maxHeight="30.0" maxWidth="200.0" minHeight="30.0" minWidth="200.0" prefHeight="30.0" prefWidth="200.0" text="Connection status" />
+      <TextField fx:id="id_tfd_enc" layoutX="30.0" layoutY="80.0" />
+      <Button fx:id="id_btn_enc" contentDisplay="CENTER" layoutX="309.0" layoutY="80.0" mnemonicParsing="false" style="-fx-background-color: green;" text="Encription" textAlignment="JUSTIFY" />
+      <TextField fx:id="id_tfd_dec" layoutX="30.0" layoutY="116.0" />
+      <Button fx:id="id_btn_dec" contentDisplay="CENTER" layoutX="309.0" layoutY="116.0" mnemonicParsing="false" style="-fx-background-color: green;" text="Decription" textAlignment="JUSTIFY" />
+      <Button fx:id="id_btn_exit" contentDisplay="CENTER" layoutX="309.0" layoutY="152.0" mnemonicParsing="false" style="-fx-background-color: green;" text="Exit" textAlignment="JUSTIFY" />
+   </children>
+</AnchorPane>
