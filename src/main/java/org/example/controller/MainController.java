@@ -46,7 +46,7 @@ public class MainController implements Initializable {
         id_btn_enc.setOnAction(event -> {
             String inputText = id_tfd_enc.getText();
             if (!inputText.isEmpty()) {
-                String result = sendToArduino("ENC" + inputText);
+                String result = sendToArduino("ENCRYPT:" + inputText);
                 id_tfd_dec.setText(result);
             } else {
                 System.out.println("Shifrlash uchun matn kiriting!");
@@ -57,7 +57,7 @@ public class MainController implements Initializable {
         id_btn_dec.setOnAction(event -> {
             String inputText = id_tfd_dec.getText();
             if (!inputText.isEmpty()) {
-                String result = sendToArduino("DEC" + inputText);
+                String result = sendToArduino("DECRYPT:" + inputText);
                 id_tfd_enc.setText(result);
             } else {
                 System.out.println("Deshifrlash uchun matn kiriting!");
@@ -79,14 +79,16 @@ public class MainController implements Initializable {
             // Arduino ga ma'lumot yuborish
             serialPort.getOutputStream().write((message + "\n").getBytes());
             serialPort.getOutputStream().flush();
-
+            Thread.sleep(200);
             // Arduino javobini o'qish
             byte[] buffer = new byte[1024];
             int len = serialPort.getInputStream().read(buffer);
+            System.out.println(len);
             return new String(buffer, 0, len).trim();
         } catch (Exception e) {
             e.printStackTrace();
             return "Xatolik!";
         }
     }
+
 }
